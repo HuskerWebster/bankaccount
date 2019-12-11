@@ -21,9 +21,11 @@ public class Main {
 
 
     Customer Customer1 = new Customer("Bob", new Date(30-07-1986));
-    Customer Customer2 = new Customer("Simon", new Date(12-05-2005));
+    Customer Customer2 = new Customer("Steve", new Date(30-07-1996));
+    Staff Staff1 = new Staff("Simon", new Date(12-05-2005), Role.MANAGER);
 
-    System.out.println(Customer.getNumberOfCustomers());
+
+    System.out.println(Customer.getCustomers().toString());
     System.out.println();
 
 
