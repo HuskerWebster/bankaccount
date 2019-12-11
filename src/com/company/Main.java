@@ -24,6 +24,8 @@ public class Main {
     Customer Customer2 = new Customer("Steve", new Date(30-07-1996));
     Staff Staff1 = new Staff("Simon", new Date(12-05-2005), Role.MANAGER);
 
+	System.out.println(Staff.getStaff().toString());
+
 
     System.out.println(Customer.getCustomers().toString());
     System.out.println();

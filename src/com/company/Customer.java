@@ -1,18 +1,19 @@
 package com.company;
 import java.util.Date;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Customer extends Person {
 
-    private int customerID;
+    private Integer customerID;
     private static int numberOfCustomers = 0;
-    private static ArrayList<Customer> customers = new ArrayList<Customer>();
+    private static HashMap<Integer, Customer> customers = new HashMap<Integer,Customer>();
 
 
     public Customer(String name, Date dob){
         super(name, dob);
         this.customerID = numberOfCustomers++;
-        customers.add(this);
+        customers.put(this.customerID, this);
     }
 
     public int getCustomerID(){
@@ -27,7 +28,7 @@ public class Customer extends Person {
         return numberOfCustomers;
     }
 
-    public static ArrayList<Customer> getCustomers() {return customers;}
+    public static HashMap<Integer, Customer> getCustomers() {return customers;}
 
     public static void removeCustomer (Customer customer)
     {

@@ -1,13 +1,14 @@
 package com.company;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 
 public class Staff extends Person {
 
-    private int staffID;
+    private Integer staffID;
     private static int numberOfStaff = 0;
     private Role role;
-    private static ArrayList<Staff> staffs = new ArrayList<Staff>();
+    private static HashMap<Integer, Staff> staffs = new HashMap<Integer, Staff>();
 
 
 
@@ -15,7 +16,7 @@ public class Staff extends Person {
         super(name, dob);
         this.role = role;
         this.staffID = numberOfStaff++;
-        staffs.add(this);
+        staffs.put(this.staffID, this);
     }
 
     public Role getRole() { return role;}
@@ -34,7 +35,7 @@ public class Staff extends Person {
         return numberOfStaff;
     }
 
-    public static ArrayList<Staff> getStaff() {return staffs;}
+    public static HashMap<Integer, Staff> getStaff() {return staffs;}
 
     public static void removeStaff (Staff staff)
     {
